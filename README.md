@@ -1,7 +1,7 @@
 > **CZ**
 # Útěk z ostrova
 
-Singleplayer hra, kde hlavním cílem bude projít jednotlivé úrovně, které budou postupně těžší a těžší. Bude se jednat o hru typu plošinovka. Úkolem hráče bude projit úroveň od startu do cíle a projít překážky. Postupem budou přibývat nové mechaniky. Procházením úrovně se budou postupně objevovat překážky. Hráč si musí najít logiku a naučit se systém jak úroveň projít. Hra bude 2D pomocí pixelové grafiky. 
+Útěk z ostrova je singleplayerová hra typu plošinovka. Hra je vytvořena ve 2D prostředí a využívá pixelovou grafiku. Hra obsahuje jednu úroveň, jejíž obtížnost se postupně zvyšuje, čím dál se hráč dostane. Cílem hráče je dostat se ze začátku úrovně až do cíle a překonat všechny překážky, které se na cestě objeví. Úroveň se bude postupně ztěžovat – nové překážky a herní mechaniky se budou objevovat, jakmile hráč postupuje dál. Hráč si tak bude muset osvojit logiku hry, zapamatovat si rozmístění překážek a najít způsob, jak úroveň úspěšně projít. 
 
 <br>
 <br>
@@ -9,4 +9,4 @@ Singleplayer hra, kde hlavním cílem bude projít jednotlivé úrovně, které 
 > **EN-US**
 # Escape from the Island
 
-A single-player game where the main goal is to complete individual levels that gradually become more and more difficult. It will be a platformer-type game. The player's task will be to complete the level from start to finish and overcome obstacles. New mechanics will be added as the game progresses. Obstacles will gradually appear as the player progresses through the level. The player must find the logic and learn the system to complete the level. The game will be 2D using pixel graphics. 
+Escape from the Island is a single-player platformer game. It is created in a 2D environment and uses pixel graphics. The game contains one level, whose difficulty gradually increases as the player progresses. The player's goal is to reach the end of the level from the starting point and overcome all the obstacles that appear along the way. The level becomes increasingly challenging – new obstacles and game mechanics appear as the player advances. The player must learn the game’s logic, remember the placement of obstacles, and find a way to complete the level successfully. 
