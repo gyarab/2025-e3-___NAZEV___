@@ -1,9 +1,46 @@
-#include <iostream>
+#include <SDL3/SDL.h>
 
-//First compilation test
-int main(void)
+#define EXIT_SUCCESS 0
+
+//First test program to demostrate rendering of a basic triangle
+//'WinMain' has to be used as entry point
+int WinMain(int argc, char** argv)
 {
-	std::cout << "Hello world!";
+	//Initialize variables 
+	SDL_Window* GameWindow = nullptr;
+	SDL_Renderer* TriangleRenderer = nullptr;
+	__int32 Width = 600, Length = 500;
+	SDL_FPoint PointA = SDL_FPoint(100.0f, 400.0f);
+	SDL_FPoint PointB = SDL_FPoint(500.0f, 400.0f);
+	SDL_FPoint PointC = SDL_FPoint(300.0f, 100.0f);
+	SDL_Event Event = SDL_Event();
+
+	//Initialize library, graphical windows and one renderer
+	SDL_Init(SDL_INIT_VIDEO);
+	GameWindow = SDL_CreateWindow("Basic Triangle", Width, Length, NULL);
+	TriangleRenderer = SDL_CreateRenderer(GameWindow, NULL);
+
+	//Main loop for poll events
+	while (true)
+	{
+		//Get poll event and check if the window has to be closed
+		SDL_PollEvent(&Event);
+
+		if (Event.type == SDL_EVENT_QUIT)
+			break;
+
+		//Rendering the triangle using three points
+		SDL_SetRenderDrawColor(TriangleRenderer, 255, 255, 255, SDL_ALPHA_OPAQUE);
+		SDL_RenderLine(TriangleRenderer, PointA.x, PointA.y, PointB.x, PointB.y);
+		SDL_RenderLine(TriangleRenderer, PointB.x, PointB.y, PointC.x, PointC.y);
+		SDL_RenderLine(TriangleRenderer, PointA.x, PointA.y, PointC.x, PointC.y);
+		SDL_RenderPresent(TriangleRenderer);
+	}
+
+	//Clearing memory and close program
+	SDL_DestroyRenderer(TriangleRenderer);
+	SDL_DestroyWindow(GameWindow);
+	SDL_Quit();
 
 	return EXIT_SUCCESS;
 };
