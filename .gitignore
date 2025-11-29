@@ -41,7 +41,5 @@
 *.dwo
 
 # Visual studio directories
-.vs\
-Game\.vs\
 /.vs
 /Game/.vs/Game
