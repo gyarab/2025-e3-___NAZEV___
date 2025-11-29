@@ -23,13 +23,34 @@ int WinMain(int argc, char** argv)
 	//Main loop for poll events
 	while (true)
 	{
-		//Get poll event and check if the window has to be closed
+		//Get event poll and process it
 		SDL_PollEvent(&Event);
 
+		//Flip triangle if a 'K' key is pressed and flip it back if its released
+		if (Event.key.scancode == SDL_SCANCODE_K)
+		{
+			if (Event.type == SDL_EVENT_KEY_DOWN)
+			{
+				PointA.y = 100.0f;
+				PointB.y = 100.0f;
+				PointC.y = 400.0f;
+			}
+
+			if (Event.type == SDL_EVENT_KEY_UP)
+			{
+				PointA.y = 400.0f;
+				PointB.y = 400.0f;
+				PointC.y = 100.0f;
+			}
+		}
+
+		//Check if the window has to be closed
 		if (Event.type == SDL_EVENT_QUIT)
 			break;
 
 		//Rendering the triangle using three points
+		SDL_SetRenderDrawColor(TriangleRenderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
+		SDL_RenderClear(TriangleRenderer);
 		SDL_SetRenderDrawColor(TriangleRenderer, 255, 255, 255, SDL_ALPHA_OPAQUE);
 		SDL_RenderLine(TriangleRenderer, PointA.x, PointA.y, PointB.x, PointB.y);
 		SDL_RenderLine(TriangleRenderer, PointB.x, PointB.y, PointC.x, PointC.y);
@@ -37,7 +58,7 @@ int WinMain(int argc, char** argv)
 		SDL_RenderPresent(TriangleRenderer);
 	}
 
-	//Clearing memory and close program
+	//Clear memory and close program
 	SDL_DestroyRenderer(TriangleRenderer);
 	SDL_DestroyWindow(GameWindow);
 	SDL_Quit();
