@@ -43,3 +43,6 @@
 # Visual studio directories
 /.vs
 /Game/.vs/Game
+
+# Visual studio project's compilation directories
+/Game/Game/x64/
