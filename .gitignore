@@ -46,3 +46,9 @@
 
 # Visual studio project's compilation directories
 /Game/Game/x64/
+
+# SDL3 libraries folder
+/Game/SDL3
+
+# Visual studio compiler's output directories
+/Game/x64
